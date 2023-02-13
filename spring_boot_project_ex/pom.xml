@@ -55,6 +55,7 @@
          <groupId>javax.servlet</groupId>
          <artifactId>jstl</artifactId>
       </dependency>
+      
       <!-- spring boot auto restart(설정, 클래스가 바뀌면 auto restart) -->
         <!-- 스프링 레거시 프로젝트에서는 자바 코드가 바뀌면 자동으로 서버가 다시 시작되는데 부트에서는
         그런 것이 없기 때문에 서버가 재시작할 수 있도록 설정을 해주어야 함 -->
@@ -67,16 +68,53 @@
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-      
-	</dependencies>
+      <!-- Maven Plugins 의존성 -->
+<dependency>
+
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-resources-plugin</artifactId>
+<version>3.1.0</version>
+<type>maven-plugin</type>
+
+</dependency>
+<dependency>
+
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-war-plugin</artifactId>
+<version>3.1.0</version>
+<type>maven-plugin</type>
+
+</dependency>
+
+</dependencies>
+	
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+
+<plugins>
+
+<plugin>
+
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin</artifactId>
+
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-resources-plugin</artifactId>
+
+<version>3.1.0</version>
+
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-war-plugin</artifactId>
+<version>3.1.0</version>
+
+</plugin>
+
+</plugins>
+
+</build>
 
 </project>
